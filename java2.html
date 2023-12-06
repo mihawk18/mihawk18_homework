@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <h1>Javacript</h1>
+
+
+  <hr>
+  <Script>
+    let name = prompt('ชื่ออะไร : ')
+    console.log(name) 
+    alert(name) 
+</Script>
+  <h2>Just change A - Z</h2>
+  <p id="demo">Hi</p>
+  
+  <hr>
+  <h2>Click to change</h2>
+  <p id="demo2">Hi</p>
+  <button onclick="myFunction()">Click me</button>
+  
+  <hr>
+  <h2>Calculate number</h2>
+  <input id="numb">
+  <button type="button" onclick="myFunction2()">Submit</button>
+  <p id="demo3"></p>
+  
+  <!-- https://www.chartjs.org/docs/latest/getting-started/ -->
+  <hr>
+  <div>
+    <canvas id="myChart2" ></canvas>
+  </div>
+  
+  <!-- https://www.w3schools.com/js/js_graphics_chartjs.asp -->
+  <hr>
+  <canvas id="myChart" style="width:100%;max-width:1000px"></canvas>
+  
+  <!-- End page content -->
+  </div>
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-16">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  </footer>
+  
+  <script>
+    //document.getElementById("demo").innerHTML = "Hello World";
+  
+    function printAlphabets() {
+    // สร้างตัวแปรเพื่อเก็บตัวอักษร A-Z
+    const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  
+    // ใช้ forEach เพื่อวนลูปผ่านทุกตัวอักษร
+    alphabets.split('').forEach((alphabet, index) => {
+      // ใช้ setTimeout เพื่อกำหนดระยะเวลาการแสดงผล
+      setTimeout(() => {
+        document.getElementById("demo").innerHTML = alphabet;
+        console.log(alphabet);
+      }, index * 1000); // 1000 milliseconds = 1 วินาที
+    });
+  }
+  printAlphabets();
+  
+    function myFunction() {
+      document.getElementById("demo2").innerHTML = "Hello World";
+  }
+  
+    function myFunction2() {
+    // Get the value of the input field with id="numb"
+    let x = document.getElementById("numb").value;
+    // If x is Not a Number or less than one or greater than 10
+    let text;
+    if (isNaN(x) || x < 1 || x > 10) {
+      text = "Input not valid";
+    } else {
+      text = "Input OK";
+    }
+    document.getElementById("demo3").innerHTML = text;
+  }
+  
+  
+  </script>
+      <div>
+        <canvas id="myChart"></canvas>
+       
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx,{
+          type: 'bar',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2],
+              backgroundColor: [
+      'rgba(255, 99, 132, 0.6)',
+      'rgba(255, 159, 64, 0.6)',
+      'rgba(255, 205, 86, 0.6)',
+      'rgba(75, 192, 192, 0.6)',
+      'rgba(54, 162, 235, 0.6)',
+      
+      
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      
+    ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        
+
+        
+      </script>
+  </script>
+</body>
+</html>
